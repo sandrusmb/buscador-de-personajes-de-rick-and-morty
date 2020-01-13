@@ -4,9 +4,9 @@ import "../stylesheets/Header.scss";
 
 function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <img className="header__photo" src={logo} alt="logo Rick and Morty" />
-    </div>
+    </header>
   );
 }
 
