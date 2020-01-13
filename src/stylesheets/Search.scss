@@ -1,0 +1,15 @@
+.search {
+  display: flex;
+  justify-content: center;
+
+  &__input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid rgb(11, 155, 190);
+    width: 30%;
+
+    &:hover {
+      border: 3px solid greenyellow;
+    }
+  }
+}
