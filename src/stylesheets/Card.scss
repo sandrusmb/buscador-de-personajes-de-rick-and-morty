@@ -1,0 +1,24 @@
+.card {
+  border: 1px solid green;
+  margin: 20px 10px;
+
+  &__photo {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid orange;
+  }
+
+  &__container {
+    background: rgb(16, 126, 177);
+    padding-left: 10px;
+    margin: 0px;
+
+    &__name {
+      margin: 0px;
+    }
+
+    &__type {
+      margin: 0px;
+    }
+  }
+}
