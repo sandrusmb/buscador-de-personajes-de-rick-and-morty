@@ -7,10 +7,8 @@ function Card() {
   return (
     <li className="card">
       <img className="card__photo" src={murray} alt="foto del personaje" />
-      <div className="card__container">
-        <h3 className="card__container__name">Nombre</h3>
-        <p className="card__container__type">Especie</p>
-      </div>
+      <h3 className="card__name">Nombre</h3>
+      <p className="card__type">Especie</p>
     </li>
   );
 }

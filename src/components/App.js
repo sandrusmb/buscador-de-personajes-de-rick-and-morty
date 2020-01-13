@@ -4,14 +4,16 @@ import Header from "./Header";
 import Search from "./Search";
 import List from "./List";
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <Search />
-      <List />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Search />
+        <List />
+      </div>
+    );
+  }
 }
 
 export default App;

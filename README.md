@@ -1,5 +1,6 @@
 [x]Limpiar la aplicación
-[] Crear html, css y componentes básicos
+[x] Crear html, css y componentes básicos
+[] Obtener datos desde la api
 
 ---
 
