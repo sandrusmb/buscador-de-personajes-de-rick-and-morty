@@ -5,7 +5,7 @@ import Search from "./Search";
 import List from "./List";
 import data from "../api/data.js";
 import Detail from "./Detail";
-import { Link, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
@@ -14,6 +14,7 @@ class App extends React.Component {
       input: "",
       data: []
     };
+    this.renderDetail = this.renderDetail.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +26,19 @@ class App extends React.Component {
   handleChange = data => {
     this.setState({ input: data.value });
   };
+
+  renderDetail(props) {
+    const routeId = props.match.params.id;
+    console.log(this.state.data, props.match.params.id);
+    this.state.data.find(element => {
+      return element.id === parseInt(routeId);
+    });
+    if (data === undefined) {
+      return <p>Personaje no encontrado</p>;
+    } else {
+      return <Detail data={data} />;
+    }
+  }
 
   render() {
     const filteredData = this.state.data.filter(character => {
@@ -40,9 +54,7 @@ class App extends React.Component {
             <Search handleChange={this.handleChange} />
             <List data={filteredData} />
           </Route>
-          <Route path="/character/:id">
-            <Detail />
-          </Route>
+          <Route path="/character/:id" render={this.renderDetail}></Route>
         </Switch>
       </div>
     );

@@ -2,7 +2,8 @@ import React from "react";
 import "../stylesheets/Detail.scss";
 import example from "../images/example.jpg";
 
-function Detail() {
+function Detail(props) {
+  console.log(props);
   return (
     <section className="detail">
       <p className="detail__title">&lt; Volver</p>
