@@ -9,6 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      input: "",
       data: []
     };
   }
@@ -19,12 +20,23 @@ class App extends React.Component {
     });
   }
 
+  handleChange = data => {
+    this.setState({ input: data.value });
+    console.log(data);
+  };
+
   render() {
+    console.log(this.state);
+    const filteredData = this.state.data.filter(character => {
+      return character.name
+        .toLowerCase()
+        .includes(this.state.input.toLowerCase());
+    });
     return (
       <div>
         <Header />
-        <Search />
-        <List data={this.state.data} />
+        <Search handleChange={this.handleChange} />
+        <List data={filteredData} />
       </div>
     );
   }

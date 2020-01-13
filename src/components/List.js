@@ -3,7 +3,6 @@ import Card from "./Card";
 import "../stylesheets/List.scss";
 
 function List(props) {
-  console.log(props.data);
   return (
     <main className="list">
       <ul className="list__ul">
