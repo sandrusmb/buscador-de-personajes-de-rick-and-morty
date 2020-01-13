@@ -3,12 +3,13 @@ import "../stylesheets/Card.scss";
 //QUITAR LA FOTO DE PRUEBA DE BILL MURRAY
 import example from "../images/example.jpg";
 
-function Card() {
+function Card(props) {
+  console.log(props);
   return (
     <li className="card">
-      <img className="card__photo" src={example} alt="foto del personaje" />
-      <h3 className="card__name">Nombre</h3>
-      <p className="card__type">Especie</p>
+      <img className="card__photo" src={props.photo} alt="foto del personaje" />
+      <h2 className="card__name">{props.name}</h2>
+      <p className="card__type">{props.type}</p>
     </li>
   );
 }

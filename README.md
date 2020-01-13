@@ -1,6 +1,7 @@
 [x]Limpiar la aplicación
 [x] Crear html, css y componentes básicos
 [x] Fetch de la api y guardar datos en el estado
+[]Pintar las tarjetas del listado con datos reales.
 
 ---
 

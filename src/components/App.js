@@ -3,19 +3,19 @@ import "../stylesheets/App.css";
 import Header from "./Header";
 import Search from "./Search";
 import List from "./List";
-import apiData from "../api/data.js";
+import data from "../api/data.js";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      characters: []
+      data: []
     };
   }
 
   componentDidMount() {
-    apiData().then(characters => {
-      this.setState({ characters: characters });
+    data().then(data => {
+      this.setState({ data: data });
     });
   }
 
@@ -24,7 +24,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Search />
-        <List />
+        <List data={this.state.data} />
       </div>
     );
   }
