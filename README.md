@@ -1,4 +1,7 @@
-[]Limpiar la aplicación
+[x]Limpiar la aplicación
+[] Crear html, css y componentes básicos
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
