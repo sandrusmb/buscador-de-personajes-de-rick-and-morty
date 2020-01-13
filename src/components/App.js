@@ -5,6 +5,7 @@ import Search from "./Search";
 import List from "./List";
 import data from "../api/data.js";
 import Detail from "./Detail";
+import { Link, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
@@ -32,11 +33,17 @@ class App extends React.Component {
         .includes(this.state.input.toLowerCase());
     });
     return (
-      <div>
+      <div className="app">
         <Header />
-        <Search handleChange={this.handleChange} />
-        <List data={filteredData} />
-        <Detail />
+        <Switch>
+          <Route exact path="/">
+            <Search handleChange={this.handleChange} />
+            <List data={filteredData} />
+          </Route>
+          <Route path="/character/:id">
+            <Detail />
+          </Route>
+        </Switch>
       </div>
     );
   }

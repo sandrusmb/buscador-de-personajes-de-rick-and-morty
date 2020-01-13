@@ -10,7 +10,6 @@ function Search(props) {
       <input
         className="search__input"
         type="text"
-        placeholder="Escribe el nombre de tu personaje favorito"
         onChange={handleChange}
       ></input>
     </section>
