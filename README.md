@@ -2,7 +2,8 @@
 [x] Crear html, css y componentes básicos
 [x] Fetch de la api y guardar datos en el estado
 [x]Pintar las tarjetas del listado con datos reales.
-[]Filtrar por campo de texto
+[x]Filtrar por campo de texto
+[] Crear el componente detail y darle estilo
 
 ---
 

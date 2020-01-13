@@ -1,0 +1,40 @@
+.detail {
+  border: 1px solid red;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  &__title {
+    text-align: right;
+    font-size: 30px;
+    margin: 0px;
+  }
+
+  &__container {
+    background: rgb(11, 155, 190);
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    border-radius: 20px;
+
+    &__photo {
+      border-radius: 50%;
+      transform: scale(0.8);
+    }
+
+    &__aside {
+      padding-left: 5%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+
+      &-text {
+        margin: 0px;
+        font-size: 30px;
+      }
+    }
+  }
+}

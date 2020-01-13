@@ -4,6 +4,7 @@ import Header from "./Header";
 import Search from "./Search";
 import List from "./List";
 import data from "../api/data.js";
+import Detail from "./Detail";
 
 class App extends React.Component {
   constructor() {
@@ -22,11 +23,9 @@ class App extends React.Component {
 
   handleChange = data => {
     this.setState({ input: data.value });
-    console.log(data);
   };
 
   render() {
-    console.log(this.state);
     const filteredData = this.state.data.filter(character => {
       return character.name
         .toLowerCase()
@@ -37,6 +36,7 @@ class App extends React.Component {
         <Header />
         <Search handleChange={this.handleChange} />
         <List data={filteredData} />
+        <Detail />
       </div>
     );
   }
