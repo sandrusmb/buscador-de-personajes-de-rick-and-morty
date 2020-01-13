@@ -3,7 +3,8 @@
 [x] Fetch de la api y guardar datos en el estado
 [x]Pintar las tarjetas del listado con datos reales.
 [x]Filtrar por campo de texto
-[] Crear el componente detail y darle estilo
+[x] Crear el componente detail y darle estilo
+[] Router: hacer click en la tarjeta e ir al detail
 
 ---
 

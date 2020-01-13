@@ -1,5 +1,4 @@
 .detail {
-  border: 1px solid red;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,11 @@
     text-align: right;
     font-size: 30px;
     margin: 0px;
+    &:hover {
+      color: greenyellow;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25),
+        4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
   }
 
   &__container {
@@ -21,6 +25,9 @@
     &__photo {
       border-radius: 50%;
       transform: scale(0.8);
+      &:hover {
+        box-shadow: 10px 10px 100px yellowgreen;
+      }
     }
 
     &__aside {
@@ -34,6 +41,8 @@
       &-text {
         margin: 0px;
         font-size: 30px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25),
+          4px 4px 10px rgba(0, 0, 0, 0.2);
       }
     }
   }

@@ -3,9 +3,12 @@
   background: rgb(11, 155, 190);
   border-radius: 10px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
   &:hover {
     border: 10px solid greenyellow;
     background: greenyellow;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25),
+      4px 4px 10px rgba(0, 0, 0, 0.2);
   }
 
   &__photo {
@@ -21,6 +24,6 @@
 
   &__type {
     margin: 0px;
-    padding: 0px 20px;
+    padding: 0px 20px 10px 20px;
   }
 }
