@@ -3,6 +3,7 @@ import "../stylesheets/Search.scss";
 
 function Search(props) {
   function handleSearch(ev) {
+    ev.preventDefault();
     console.log(ev.target.value);
     props.handleSearch({ value: ev.target.value });
   }
