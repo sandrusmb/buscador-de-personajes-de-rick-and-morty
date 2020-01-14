@@ -40,6 +40,8 @@ class App extends React.Component {
     });
     if (character !== undefined) {
       return <Detail character={character} />;
+    } else {
+      return <p className="notfound">Personaje no encontrado</p>;
     }
   };
 
