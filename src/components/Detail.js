@@ -3,7 +3,6 @@ import "../stylesheets/Detail.scss";
 import { Link } from "react-router-dom";
 
 function Detail(props) {
-  console.log(props.character.status);
   const { image, name, status, species, location, episode } = props.character;
   return (
     <section className="detail">
@@ -31,17 +30,5 @@ function Detail(props) {
     </section>
   );
 }
-
-//
-const status = status => {
-  if (status === "Dead") {
-    return "hola";
-  } else if (status === "Alive") {
-    return "adión";
-  } else {
-    return "hasta luego";
-  }
-};
-//
 
 export default Detail;

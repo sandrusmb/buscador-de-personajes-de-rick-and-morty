@@ -34,7 +34,6 @@ class App extends React.Component {
   //router detail
   renderCharacterDetail = props => {
     const routeId = props.match.params.id;
-    console.log(props.match.params.id);
     const character = this.state.characters.find(item => {
       return item.id === parseInt(routeId);
     });
