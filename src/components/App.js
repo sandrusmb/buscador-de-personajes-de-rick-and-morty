@@ -3,7 +3,7 @@ import "../stylesheets/App.css";
 import Header from "./Header";
 import Search from "./Search";
 import List from "./List";
-import data from "../api/data.js";
+import getData from "../api/data.js";
 import Detail from "./Detail";
 import { Route, Switch } from "react-router-dom";
 
@@ -11,52 +11,61 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      input: "",
-      data: []
+      search: "",
+      characters: []
     };
-    this.renderDetail = this.renderDetail.bind(this);
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
+  //fetch
   componentDidMount() {
-    data().then(data => {
-      this.setState({ data: data });
+    getData().then(characters => {
+      this.setState({ characters: characters });
     });
   }
 
-  handleChange = data => {
-    this.setState({ input: data.value });
+  handleSearch(data) {
+    this.setState({
+      search: data.value
+    });
+  }
+
+  //router detail
+  renderCharacterDetail = props => {
+    const routeId = props.match.params.id;
+    console.log(props.match.params.id);
+    const character = this.state.characters.find(item => {
+      return item.id === parseInt(routeId);
+    });
+    if (character !== undefined) {
+      return <Detail character={character} />;
+    }
   };
 
-  renderDetail(props) {
-    const routeId = props.match.params.id;
-    console.log(this.state.data, props.match.params.id);
-    this.state.data.find(element => {
-      return element.id === parseInt(routeId);
-    });
-    if (data === undefined) {
-      return <p>Personaje no encontrado</p>;
-    } else {
-      return <Detail data={data} />;
-    }
-  }
-
   render() {
-    const filteredData = this.state.data.filter(character => {
+    const filteredCharacters = this.state.characters.filter(character => {
       return character.name
         .toLowerCase()
-        .includes(this.state.input.toLowerCase());
+        .includes(this.state.search.toLowerCase());
     });
+
     return (
-      <div className="app">
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Search handleChange={this.handleChange} />
-            <List data={filteredData} />
-          </Route>
-          <Route path="/character/:id" render={this.renderDetail}></Route>
-        </Switch>
-      </div>
+      <React.Fragment>
+        <div className="app">
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Search handleSearch={this.handleSearch} />
+              <List characters={filteredCharacters} />
+            </Route>
+            <Route
+              path="/character/:id/"
+              render={this.renderCharacterDetail}
+            ></Route>
+          </Switch>
+        </div>
+      </React.Fragment>
     );
   }
 }

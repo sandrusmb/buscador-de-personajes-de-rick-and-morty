@@ -2,17 +2,19 @@ import React from "react";
 import "../stylesheets/Search.scss";
 
 function Search(props) {
-  function handleChange(ev) {
-    props.handleChange({ value: ev.target.value });
+  function handleSearch(ev) {
+    console.log(ev.target.value);
+    props.handleSearch({ value: ev.target.value });
   }
+
   return (
-    <section className="search">
+    <form className="search">
       <input
         className="search__input"
         type="text"
-        onChange={handleChange}
+        onChange={handleSearch}
       ></input>
-    </section>
+    </form>
   );
 }
 
