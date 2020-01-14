@@ -3,7 +3,6 @@ import "../stylesheets/Card.scss";
 import { Link } from "react-router-dom";
 
 function Card(props) {
-  console.log(props.character.name);
   const { id, image, name, species } = props.character;
 
   return (
