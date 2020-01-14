@@ -2,3 +2,10 @@
   background-image: url(../images/universe2.jpg);
   height: 100%;
 }
+
+.notfound {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  border: 1px solid red;
+}

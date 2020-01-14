@@ -13,6 +13,7 @@ function Search(props) {
         className="search__input"
         type="text"
         onChange={handleSearch}
+        value={props.value}
       ></input>
     </form>
   );

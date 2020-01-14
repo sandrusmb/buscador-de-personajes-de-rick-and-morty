@@ -56,7 +56,10 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              <Search handleSearch={this.handleSearch} />
+              <Search
+                handleSearch={this.handleSearch}
+                value={this.state.search}
+              />
               <List characters={filteredCharacters} />
             </Route>
             <Route
