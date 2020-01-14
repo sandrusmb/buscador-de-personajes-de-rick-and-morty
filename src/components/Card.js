@@ -7,7 +7,7 @@ function Card(props) {
   const { id, image, name, species } = props.character;
 
   return (
-    <Link to={`/character/${id}`}>
+    <Link to={`/character/${id}`} className="link">
       <li className="card">
         <img className="card__photo" src={image} alt={name} />
         <h2 className="card__name">{name}</h2>

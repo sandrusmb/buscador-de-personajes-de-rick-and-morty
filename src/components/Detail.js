@@ -7,8 +7,8 @@ function Detail(props) {
   const { image, name, status, species, location, episode } = props.character;
   return (
     <section className="detail">
-      <Link to="/">
-        <p className="detail__title">&lt; Volver</p>
+      <Link to="/" className="detail__link">
+        <p className="detail__link__title">&lt; Volver</p>
       </Link>
       <div className="detail__container">
         <img className="detail__container__photo" src={image} alt={name} />
