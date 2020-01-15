@@ -6,16 +6,19 @@ import List from "./List";
 import getData from "../api/data.js";
 import Detail from "./Detail";
 import { Route, Switch } from "react-router-dom";
+import Radio from "./Radio";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      status: "",
       search: "",
       characters: []
     };
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleStatus = this.handleStatus.bind(this);
   }
 
   //fetch
@@ -25,9 +28,17 @@ class App extends React.Component {
     });
   }
 
+  //handles
+
   handleSearch(data) {
     this.setState({
       search: data.value
+    });
+  }
+
+  handleStatus(data) {
+    this.setState({
+      status: data.value
     });
   }
 
@@ -45,11 +56,17 @@ class App extends React.Component {
   };
 
   render() {
-    const filteredCharacters = this.state.characters.filter(character => {
-      return character.name
-        .toLowerCase()
-        .includes(this.state.search.toLowerCase());
-    });
+    const genderSelected = this.state.genderSelected;
+    let filteredCharacters = this.state.characters
+
+      .filter(character => {
+        return character.status.includes(this.state.status);
+      })
+      .filter(character => {
+        return character.name
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase());
+      });
 
     return (
       <React.Fragment>
@@ -60,6 +77,10 @@ class App extends React.Component {
               <Search
                 handleSearch={this.handleSearch}
                 value={this.state.search}
+              />
+              <Radio
+                handleStatus={this.handleStatus}
+                status={this.state.status}
               />
               <List characters={filteredCharacters} />
             </Route>
