@@ -38,7 +38,7 @@ Este ejercicio está elaborado en 12 horas y tenía como objetivo:
 - Saber usar métodos funcionales de array (map, filter, etc.)
 - Usar el estado para gestionar información de la interfaz
 - Que el componente principal App.js manejara el estado de la aplicación
-- Usae eventos en React para atender a interacciones del usuario       
+- Usar eventos en React para atender a interacciones del usuario       
 - Usar métodos del ciclo de vida para las peticiones al servidor
 - Escribir un código sólido, sin errores en la consola
 - React router
