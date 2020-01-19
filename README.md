@@ -1,4 +1,4 @@
-#Buscador de pesonajes de Rick and Morty
+# Buscador de pesonajes de Rick and Morty
 
 Se trata del ejercicio de la evaluación final del módulo 3 de Adalab correspondiente a React. 
 
