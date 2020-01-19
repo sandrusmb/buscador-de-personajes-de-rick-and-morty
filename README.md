@@ -44,3 +44,6 @@ Este ejercicio está elaborado en 12 horas y tenía como objetivo:
 - React router
 - Crea rutas navegables dentro de una aplicación
 - Usar inglés para nombres de variables, funciones, clases, mensajes de commit, nombres de ficheros. 
+
+![Home](https://github.com/sandrusmb/modulo-3-evaluacion-final-sandrusmb/blob/master/src/images/home.png)
+![Detail](https://github.com/sandrusmb/modulo-3-evaluacion-final-sandrusmb/blob/master/src/images/detail.png)
